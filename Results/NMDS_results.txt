@@ -1,0 +1,46 @@
+[1] "========= upland flies =========="
+
+Call:
+adonis(formula = composition[, 4:7] ~ composition$treatment,      permutations = 9999, method = "bray") 
+
+Permutation: free
+Number of permutations: 9999
+
+Terms added sequentially (first to last)
+
+                      Df SumsOfSqs  MeanSqs F.Model     R2 Pr(>F)    
+composition$treatment  5   1.35666 0.271332  7.8548 0.6207  1e-04 ***
+Residuals             24   0.82904 0.034543         0.3793           
+Total                 29   2.18570                  1.0000           
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Letters
+CTRL_CLOSED       a
+CTRL_INVAS       ab
+HW_CLOSED         c
+HW_INVAS          d
+WARM_CLOSED      ab
+WARM_INVAS        b
+[1] "========= wasps =========="
+
+Call:
+adonis(formula = composition[, 4:5] ~ composition$treatment,      permutations = 9999, method = "bray") 
+
+Permutation: free
+Number of permutations: 9999
+
+Terms added sequentially (first to last)
+
+                      Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)    
+composition$treatment  5    1.4708 0.29415  6.5498 0.57709  1e-04 ***
+Residuals             24    1.0778 0.04491         0.42291           
+Total                 29    2.5486                 1.00000           
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Letters
+CTRL_CLOSED       a
+CTRL_INVAS       bc
+HW_CLOSED         b
+HW_INVAS          c
+WARM_CLOSED       b
+WARM_INVAS       ab

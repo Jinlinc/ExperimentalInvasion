@@ -1,0 +1,492 @@
+[1] "========= Asobara =========="
+
+Call:
+glm(formula = Asobara ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = dat_census)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-15.2855   -2.9249   -0.0939    2.2742   12.7341  
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                        6.23101    0.02205 282.527   <2e-16 ***
+tempwarming                       -0.33477    0.03196 -10.476   <2e-16 ***
+tempheatwave                      -0.39614    0.03254 -12.174   <2e-16 ***
+invasionintroduction              -0.68382    0.03563 -19.190   <2e-16 ***
+blockB2                           -0.21096    0.02219  -9.508   <2e-16 ***
+tempwarming:invasionintroduction   0.68739    0.04958  13.864   <2e-16 ***
+tempheatwave:invasionintroduction -0.58779    0.06450  -9.113   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 2453.91  on 29  degrees of freedom
+Residual deviance:  802.27  on 23  degrees of freedom
+AIC: 1036.1
+
+Number of Fisher Scoring iterations: 5
+
+invasion = without:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  1.398 0.0447 Inf     1.297     1.506    1  10.476  <.0001
+ control / heatwave 1.486 0.0484 Inf     1.377     1.604    1  12.174  <.0001
+ warming / heatwave 1.063 0.0373 Inf     0.979     1.154    1   1.751  0.1863
+
+invasion = introduction:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  0.703 0.0266 Inf     0.643     0.768    1  -9.302  <.0001
+ control / heatwave 2.675 0.1490 Inf     2.348     3.048    1  17.668  <.0001
+ warming / heatwave 3.806 0.2032 Inf     3.358     4.313    1  25.034  <.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 1.981 0.0706 Inf     1.848      2.12    1  19.190  <.0001
+
+temp = warming:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.996 0.0343 Inf     0.931      1.07    1  -0.103  0.9176
+
+temp = heatwave:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 3.567 0.1917 Inf     3.210      3.96    1  23.653  <.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion      rate   SE  df asymp.LCL asymp.UCL .group
+ heatwave introduction  86.3 4.11 Inf      78.6      94.7  A    
+ control  introduction 230.8 6.75 Inf     218.0     244.5   B   
+ heatwave without      307.8 7.81 Inf     292.8     323.5    C  
+ warming  without      327.3 8.06 Inf     311.8     343.4    C  
+ warming  introduction 328.4 8.07 Inf     313.0     344.6    C  
+ control  without      457.4 9.56 Inf     439.0     476.5     D 
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
+[1] "========= Diapriid =========="
+
+Call:
+glm(formula = Diapriid ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = dat_census)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4.5555  -0.8977   0.0310   0.9041   3.1528  
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                         2.6170     0.1214  21.560  < 2e-16 ***
+tempwarming                        -1.2646     0.2312  -5.471 4.48e-08 ***
+tempheatwave                       -1.1104     0.2179  -5.096 3.47e-07 ***
+invasionintroduction                0.1423     0.1482   0.960    0.337    
+blockB2                             0.4722     0.1055   4.477 7.58e-06 ***
+tempwarming:invasionintroduction    1.1455     0.2741   4.179 2.92e-05 ***
+tempheatwave:invasionintroduction   0.1631     0.2898   0.563    0.574    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 191.237  on 29  degrees of freedom
+Residual deviance:  72.624  on 23  degrees of freedom
+AIC: 207.62
+
+Number of Fisher Scoring iterations: 5
+
+invasion = without:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  3.542 0.819 Inf     2.060      6.09    1   5.471  <.0001
+ control / heatwave 3.036 0.661 Inf     1.822      5.06    1   5.096  <.0001
+ warming / heatwave 0.857 0.238 Inf     0.447      1.65    1  -0.554  0.8443
+
+invasion = introduction:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  1.126 0.166 Inf     0.798      1.59    1   0.808  0.6979
+ control / heatwave 2.579 0.493 Inf     1.648      4.04    1   4.957  <.0001
+ warming / heatwave 2.289 0.445 Inf     1.451      3.61    1   4.260  0.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.867 0.1286 Inf     0.649     1.160    1  -0.960  0.3370
+
+temp = warming:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.276 0.0636 Inf     0.176     0.433    1  -5.586  <.0001
+
+temp = heatwave:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.737 0.1835 Inf     0.452     1.201    1  -1.226  0.2201
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion      rate    SE  df asymp.LCL asymp.UCL .group
+ warming  without       4.90 0.999 Inf      3.28      7.31  A    
+ heatwave without       5.71 1.080 Inf      3.94      8.27  A    
+ heatwave introduction  7.75 1.258 Inf      5.64     10.65  A    
+ control  without      17.34 1.881 Inf     14.02     21.45   B   
+ warming  introduction 17.75 1.903 Inf     14.38     21.90   B   
+ control  introduction 19.99 2.020 Inf     16.40     24.37   B   
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
+[1] "========= PST =========="
+
+Call:
+glm(formula = PST.M ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = dat_census)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.2216  -1.1771  -0.2201   0.6914   3.4378  
+
+Coefficients:
+                                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                        4.212664   0.063101  66.760  < 2e-16 ***
+tempwarming                       -0.724563   0.102609  -7.061 1.65e-12 ***
+tempheatwave                      -2.272126   0.191753 -11.849  < 2e-16 ***
+invasionintroduction              -0.355203   0.091315  -3.890   0.0001 ***
+blockB2                           -0.424039   0.076880  -5.516 3.48e-08 ***
+tempwarming:invasionintroduction   0.133831   0.155821   0.859   0.3904    
+tempheatwave:invasionintroduction -0.001472   0.298805  -0.005   0.9961    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 535.39  on 29  degrees of freedom
+Residual deviance:  64.44  on 23  degrees of freedom
+AIC: 218.97
+
+Number of Fisher Scoring iterations: 4
+
+invasion = without:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming   2.06 0.212 Inf      1.62      2.62    1   7.061  <.0001
+ control / heatwave  9.70 1.860 Inf      6.19     15.20    1  11.849  <.0001
+ warming / heatwave  4.70 0.945 Inf      2.93      7.53    1   7.697  <.0001
+
+invasion = introduction:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming   1.81 0.212 Inf      1.37      2.38    1   5.038  <.0001
+ control / heatwave  9.71 2.226 Inf      5.68     16.62    1   9.921  <.0001
+ warming / heatwave  5.38 1.279 Inf      3.08      9.39    1   7.082  <.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.43 0.130 Inf     1.193      1.71    1   3.890  0.0001
+
+temp = warming:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.25 0.158 Inf     0.974      1.60    1   1.753  0.0796
+
+temp = heatwave:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.43 0.406 Inf     0.818      2.50    1   1.254  0.2100
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion      rate    SE  df asymp.LCL asymp.UCL .group
+ heatwave introduction  3.94 0.862 Inf      2.57      6.05  A    
+ heatwave without       5.63 1.032 Inf      3.93      8.07  A    
+ warming  introduction 21.22 2.021 Inf     17.60     25.57   B   
+ warming  without      26.47 2.265 Inf     22.39     31.30   B   
+ control  introduction 38.30 2.743 Inf     33.28     44.07    C  
+ control  without      54.63 3.307 Inf     48.52     61.52     D 
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
+[1] "========= PAL =========="
+
+Call:
+glm(formula = PAL.T ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = .)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-8.5993  -3.1152  -0.1538   1.7017   9.2969  
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                        4.22769    0.05150  82.096  < 2e-16 ***
+tempwarming                       -0.43553    0.07767  -5.607 2.05e-08 ***
+tempheatwave                       0.41802    0.06269   6.668 2.59e-11 ***
+invasionintroduction               0.65818    0.05997  10.975  < 2e-16 ***
+blockB2                            0.45593    0.03278  13.911  < 2e-16 ***
+tempwarming:invasionintroduction  -0.29130    0.09898  -2.943  0.00325 ** 
+tempheatwave:invasionintroduction -0.04710    0.07748  -0.608  0.54330    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 1565.24  on 29  degrees of freedom
+Residual deviance:  503.95  on 23  degrees of freedom
+AIC: 710.96
+
+Number of Fisher Scoring iterations: 4
+
+invasion = without:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  1.546 0.1201 Inf     1.289     1.854    1   5.607  <.0001
+ control / heatwave 0.658 0.0413 Inf     0.568     0.763    1  -6.668  <.0001
+ warming / heatwave 0.426 0.0308 Inf     0.360     0.505    1 -11.811  <.0001
+
+invasion = introduction:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  2.069 0.1269 Inf     1.791     2.388    1  11.846  <.0001
+ control / heatwave 0.690 0.0314 Inf     0.620     0.768    1  -8.146  <.0001
+ warming / heatwave 0.334 0.0194 Inf     0.291     0.382    1 -18.869  <.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.518 0.0311 Inf     0.460     0.582    1 -10.975  <.0001
+
+temp = warming:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.693 0.0546 Inf     0.594     0.809    1  -4.659  <.0001
+
+temp = heatwave:
+ contrast               ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.543 0.0266 Inf     0.493     0.598    1 -12.456  <.0001
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion      rate   SE  df asymp.LCL asymp.UCL .group
+ warming  without       55.7 3.37 Inf      49.5      62.7  A    
+ warming  introduction  80.4 4.05 Inf      72.8      88.7   B   
+ control  without       86.1 4.19 Inf      78.3      94.7   B   
+ heatwave without      130.8 5.17 Inf     121.1     141.3    C  
+ control  introduction 166.3 5.83 Inf     155.3     178.1     D 
+ heatwave introduction 241.0 7.01 Inf     227.6     255.1      E
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
+[1] "========= RUB =========="
+
+Call:
+glm(formula = RUB.T ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = .)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-1.973  -0.796  -0.130   1.010   1.641  
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                        3.03203    0.09778  31.008  < 2e-16 ***
+tempwarming                        0.31691    0.12103   2.619  0.00883 ** 
+tempheatwave                       0.12716    0.12624   1.007  0.31383    
+invasionintroduction               0.19913    0.12417   1.604  0.10879    
+blockB2                            0.29627    0.06973   4.248 2.15e-05 ***
+tempwarming:invasionintroduction  -0.32388    0.16907  -1.916  0.05541 .  
+tempheatwave:invasionintroduction -0.27669    0.17592  -1.573  0.11576    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 61.025  on 29  degrees of freedom
+Residual deviance: 34.123  on 23  degrees of freedom
+AIC: 201.74
+
+Number of Fisher Scoring iterations: 4
+
+invasion = without:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  0.728 0.0882 Inf     0.549     0.967    1  -2.619  0.0240
+ control / heatwave 0.881 0.1112 Inf     0.655     1.184    1  -1.007  0.5723
+ warming / heatwave 1.209 0.1412 Inf     0.920     1.590    1   1.625  0.2350
+
+invasion = introduction:
+ contrast           ratio     SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming  1.007 0.1189 Inf     0.764     1.328    1   0.059  0.9981
+ control / heatwave 1.161 0.1423 Inf     0.871     1.548    1   1.221  0.4410
+ warming / heatwave 1.153 0.1415 Inf     0.865     1.537    1   1.162  0.4761
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 0.819 0.102 Inf     0.642      1.05    1  -1.604  0.1088
+
+temp = warming:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 1.133 0.130 Inf     0.905      1.42    1   1.087  0.2769
+
+temp = heatwave:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction 1.081 0.135 Inf     0.846      1.38    1   0.622  0.5337
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion     rate   SE  df asymp.LCL asymp.UCL .group
+ control  without      24.1 2.21 Inf      20.1      28.8  A    
+ heatwave introduction 25.3 2.27 Inf      21.2      30.1  A    
+ heatwave without      27.3 2.36 Inf      23.1      32.4  A    
+ warming  introduction 29.1 2.44 Inf      24.7      34.3  A    
+ control  introduction 29.4 2.45 Inf      24.9      34.6  A    
+ warming  without      33.0 2.59 Inf      28.3      38.5  A    
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
+[1] "========= BIR =========="
+
+Call:
+glm(formula = BIR.M ~ temp * invasion + block, family = poisson(link = "log"), 
+    data = dat_census)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.4428  -0.7606  -0.2182   0.5954   2.1199  
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                        2.01265    0.17655  11.400   <2e-16 ***
+tempwarming                       -0.25131    0.25198  -0.997    0.319    
+tempheatwave                      -0.02817    0.23738  -0.119    0.906    
+invasionintroduction              -0.18232    0.24721  -0.738    0.461    
+blockB2                           -0.09937    0.15471  -0.642    0.521    
+tempwarming:invasionintroduction   0.02817    0.37214   0.076    0.940    
+tempheatwave:invasionintroduction -0.15415    0.36011  -0.428    0.669    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 29.631  on 29  degrees of freedom
+Residual deviance: 25.011  on 23  degrees of freedom
+AIC: 146
+
+Number of Fisher Scoring iterations: 4
+
+invasion = without:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming   1.29 0.324 Inf     0.712      2.32    1   0.997  0.5785
+ control / heatwave  1.03 0.244 Inf     0.590      1.79    1   0.119  0.9923
+ warming / heatwave  0.80 0.203 Inf     0.442      1.45    1  -0.880  0.6529
+
+invasion = introduction:
+ contrast           ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ control / warming   1.25 0.342 Inf     0.658      2.37    1   0.815  0.6938
+ control / heatwave  1.20 0.325 Inf     0.636      2.26    1   0.673  0.7791
+ warming / heatwave  0.96 0.274 Inf     0.491      1.88    1  -0.143  0.9888
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Conf-level adjustment: tukey method for comparing a family of 3 estimates 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+Tests are performed on the log scale 
+temp = control:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.20 0.297 Inf     0.739      1.95    1   0.738  0.4608
+
+temp = warming:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.17 0.325 Inf     0.676      2.01    1   0.554  0.5795
+
+temp = heatwave:
+ contrast               ratio    SE  df asymp.LCL asymp.UCL null z.ratio p.value
+ without / introduction  1.40 0.367 Inf     0.838      2.34    1   1.285  0.1988
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+Tests are performed on the log scale 
+ temp     invasion     rate    SE  df asymp.LCL asymp.UCL .group
+ warming  introduction 4.75 0.973 Inf      3.18      7.09  A    
+ heatwave introduction 4.94 0.993 Inf      3.34      7.33  A    
+ warming  without      5.54 1.052 Inf      3.82      8.04  A    
+ control  introduction 5.93 1.089 Inf      4.14      8.50  A    
+ heatwave without      6.92 1.178 Inf      4.96      9.66  A    
+ control  without      7.12 1.195 Inf      5.13      9.89  A    
+
+Results are averaged over the levels of: block 
+Confidence level used: 0.95 
+Intervals are back-transformed from the log scale 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+Tests are performed on the log scale 
+significance level used: alpha = 0.05 
+NOTE: Compact letter displays can be misleading
+      because they show NON-findings rather than findings.
+      Consider using 'pairs()', 'pwpp()', or 'pwpm()' instead. 
+[1] ""
