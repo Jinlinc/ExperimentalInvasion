@@ -1,35 +1,43 @@
 [1] "========= PAN CENSUS =========="
 
 Call:
-glm(formula = PAN.M ~ temp + block, family = poisson, data = .)
+glm(formula = PAN.M ~ temp * block, family = poisson, data = .)
 
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
--2.6657  -1.2649  -0.3431   0.9269   4.9230  
+-3.1699  -0.5849   0.2475   0.3431   4.3573  
 
 Coefficients:
-             Estimate Std. Error z value Pr(>|z|)    
-(Intercept)   2.92253    0.11542  25.322  < 2e-16 ***
-tempwarming  -0.06538    0.16178  -0.404    0.686    
-tempheatwave  1.79597    0.12149  14.783  < 2e-16 ***
-blockB2      -0.47000    0.08751  -5.371 7.83e-08 ***
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           2.751535   0.145865  18.864  < 2e-16 ***
+tempwarming          -0.065958   0.209771  -0.314  0.75320    
+tempheatwave          2.016320   0.155272  12.986  < 2e-16 ***
+blockB2               0.021053   0.229187   0.092  0.92681    
+tempwarming:blockB2   0.001419   0.329526   0.004  0.99656    
+tempheatwave:blockB2 -0.669872   0.251971  -2.659  0.00785 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
     Null deviance: 548.919  on 14  degrees of freedom
-Residual deviance:  46.183  on 11  degrees of freedom
-AIC: 131.47
+Residual deviance:  34.616  on  9  degrees of freedom
+AIC: 123.9
 
 Number of Fisher Scoring iterations: 4
 
- temp     rate   SE  df asymp.LCL asymp.UCL
- control  14.7 1.67 Inf      11.8      18.4
- warming  13.8 1.62 Inf      10.9      17.3
- heatwave 88.5 4.36 Inf      80.4      97.5
+block = B1:
+ temp      rate   SE  df asymp.LCL asymp.UCL
+ upland    15.7 2.29 Inf      11.8      20.9
+ warming   14.7 2.21 Inf      10.9      19.7
+ heatwave 117.7 6.26 Inf     106.0     130.6
 
-Results are averaged over the levels of: block 
+block = B2:
+ temp      rate   SE  df asymp.LCL asymp.UCL
+ upland    16.0 2.83 Inf      11.3      22.6
+ warming   15.0 2.74 Inf      10.5      21.5
+ heatwave  61.5 5.55 Inf      51.5      73.4
+
 Confidence level used: 0.95 
 Intervals are back-transformed from the log scale 
 [1] "========= PAN SAMPLING =========="
@@ -65,45 +73,40 @@ Correlation of Fixed Effects:
 tempwarming -0.397              
 tempheatwav -0.447  0.549       
 blockB2     -0.231 -0.006 -0.016
-Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
- Family: poisson  ( log )
-Formula: PAN.M ~ temp + block + scale(PAL.M) + scale(Asobara) + scale(Diapriid) +      (1 | cageID) + (1 | sID)
-   Data: .
+[1] "========= PAN HW =========="
 
-     AIC      BIC   logLik deviance df.resid 
-   640.3    662.8   -311.2    622.3       81 
+Call:
+glm(formula = log(totalOffspring + 1) ~ timing * species + invasion + 
+    block, family = gaussian, data = .)
 
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.8571 -1.2329 -0.2509  1.0966  5.1907 
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.83516  -0.33461  -0.02021   0.43883   1.54371  
 
-Random effects:
- Groups Name        Variance Std.Dev.
- cageID (Intercept) 0.1203   0.3469  
- sID    (Intercept) 0.3329   0.5769  
-Number of obs: 90, groups:  cageID, 15; sID, 6
-
-Fixed effects:
-                Estimate Std. Error z value Pr(>|z|)    
-(Intercept)      0.67046    0.32179   2.084   0.0372 *  
-tempwarming     -0.31336    0.29023  -1.080   0.2803    
-tempheatwave     1.93435    0.27289   7.088 1.36e-12 ***
-blockB2         -0.09221    0.22931  -0.402   0.6876    
-scale(PAL.M)    -0.33326    0.06465  -5.155 2.54e-07 ***
-scale(Asobara)  -0.07169    0.09305  -0.770   0.4410    
-scale(Diapriid)  0.06148    0.03953   1.555   0.1199    
+Coefficients:
+                             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                    4.7425     0.2504  18.942  < 2e-16 ***
+timingend of HW               -3.9109     0.3160 -12.377  < 2e-16 ***
+timing5d after HW              0.4651     0.3160   1.472 0.145969    
+speciesPST                    -2.3437     0.3160  -7.417 3.44e-10 ***
+speciesPAN                    -2.1018     0.3976  -5.286 1.61e-06 ***
+invasionINVAS                 -0.1240     0.1824  -0.679 0.499297    
+blockB2                       -0.6816     0.1665  -4.092 0.000122 ***
+timingend of HW:speciesPST     1.8467     0.4469   4.132 0.000106 ***
+timing5d after HW:speciesPST  -2.4194     0.4469  -5.414 9.89e-07 ***
+timingend of HW:speciesPAN     5.4872     0.5473  10.026 9.53e-15 ***
+timing5d after HW:speciesPAN  -0.1057     0.5473  -0.193 0.847422    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Correlation of Fixed Effects:
-            (Intr) tmpwrm tmphtw blckB2 s(PAL. scl(A)
-tempwarming -0.425                                   
-tempheatwav -0.472  0.511                            
-blockB2     -0.241 -0.023 -0.085                     
-scal(PAL.M) -0.032  0.079  0.270 -0.238              
-scale(Asbr) -0.058 -0.024  0.314 -0.175  0.666       
-scale(Dprd) -0.041  0.028  0.202 -0.120  0.578  0.554
-[1] "========= PAN HW =========="
+(Dispersion parameter for gaussian family taken to be 0.4992605)
+
+    Null deviance: 295.907  on 74  degrees of freedom
+Residual deviance:  31.953  on 64  degrees of freedom
+AIC: 172.85
+
+Number of Fisher Scoring iterations: 2
+
 species = PAL:
  timing      response     SE df lower.CL upper.CL
  before HW    75.6877 17.183 64  48.0151  118.984

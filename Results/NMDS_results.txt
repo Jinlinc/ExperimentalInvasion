@@ -32,7 +32,7 @@ Number of permutations: 9999
 Terms added sequentially (first to last)
 
                       Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)    
-composition$treatment  5    1.4708 0.29415  6.5498 0.57709  1e-04 ***
+composition$treatment  5    1.4708 0.29415  6.5498 0.57709  3e-04 ***
 Residuals             24    1.0778 0.04491         0.42291           
 Total                 29    2.5486                 1.00000           
 ---

@@ -38,7 +38,7 @@ blockB2     -0.167  0.000  0.000  0.000
 tmpwrmng:nv  0.056 -0.736 -0.387 -0.716  0.000       
 tmphtwv:nvs  0.057 -0.388 -0.734 -0.684  0.000  0.490
 $emmeans
-temp = control:
+temp = upland:
  invasion     rate    SE  df asymp.LCL asymp.UCL
  without      86.9 23.60 Inf      51.0     148.0
  introduction 38.5 10.53 Inf      22.5      65.8
@@ -58,7 +58,7 @@ Confidence level used: 0.95
 Intervals are back-transformed from the log scale 
 
 $contrasts
-temp = control:
+temp = upland:
  contrast               ratio    SE  df null z.ratio p.value
  without / introduction  2.26 0.137 Inf    1  13.405  <.0001
 
@@ -76,13 +76,13 @@ Tests are performed on the log scale
 $emmeans
 invasion = without:
  temp     rate    SE  df asymp.LCL asymp.UCL
- control  86.9 23.60 Inf      51.0     148.0
+ upland   86.9 23.60 Inf      51.0     148.0
  warming  98.6 26.98 Inf      57.7     168.6
  heatwave 79.5 21.79 Inf      46.5     136.1
 
 invasion = introduction:
  temp     rate    SE  df asymp.LCL asymp.UCL
- control  38.5 10.53 Inf      22.5      65.8
+ upland   38.5 10.53 Inf      22.5      65.8
  warming  55.5 15.18 Inf      32.4      94.8
  heatwave 23.6  6.46 Inf      13.8      40.3
 
@@ -93,14 +93,14 @@ Intervals are back-transformed from the log scale
 $contrasts
 invasion = without:
  contrast           ratio     SE  df null z.ratio p.value
- control / warming  0.881 0.0547 Inf    1  -2.034  0.1042
- control / heatwave 1.093 0.0699 Inf    1   1.384  0.3493
+ upland / warming   0.881 0.0547 Inf    1  -2.034  0.1042
+ upland / heatwave  1.093 0.0699 Inf    1   1.384  0.3493
  warming / heatwave 1.240 0.0760 Inf    1   3.502  0.0013
 
 invasion = introduction:
  contrast           ratio     SE  df null z.ratio p.value
- control / warming  0.694 0.0399 Inf    1  -6.359  <.0001
- control / heatwave 1.633 0.0967 Inf    1   8.277  <.0001
+ upland / warming   0.694 0.0399 Inf    1  -6.359  <.0001
+ upland / heatwave  1.633 0.0967 Inf    1   8.277  <.0001
  warming / heatwave 2.353 0.1446 Inf    1  13.928  <.0001
 
 Results are averaged over the levels of: block 
@@ -148,7 +148,7 @@ blockB2     -0.201  0.001  0.004 -0.005
 tmpwrmng:nv  0.146 -0.703 -0.233 -0.722  0.009       
 tmphtwv:nvs  0.109 -0.291 -0.813 -0.530  0.005  0.384
 $emmeans
-temp = control:
+temp = upland:
  invasion      rate    SE  df asymp.LCL asymp.UCL
  without      3.371 0.915 Inf     1.980      5.74
  introduction 3.560 1.020 Inf     2.030      6.24
@@ -168,7 +168,7 @@ Confidence level used: 0.95
 Intervals are back-transformed from the log scale 
 
 $contrasts
-temp = control:
+temp = upland:
  contrast               ratio     SE  df null z.ratio p.value
  without / introduction 0.947 0.1594 Inf    1  -0.324  0.7459
 
@@ -186,13 +186,13 @@ Tests are performed on the log scale
 $emmeans
 invasion = without:
  temp      rate    SE  df asymp.LCL asymp.UCL
- control  3.371 0.915 Inf     1.980      5.74
+ upland   3.371 0.915 Inf     1.980      5.74
  warming  5.358 1.519 Inf     3.073      9.34
  heatwave 0.809 0.283 Inf     0.408      1.60
 
 invasion = introduction:
  temp      rate    SE  df asymp.LCL asymp.UCL
- control  3.560 1.020 Inf     2.030      6.24
+ upland   3.560 1.020 Inf     2.030      6.24
  warming  4.535 1.303 Inf     2.582      7.96
  heatwave 3.273 0.970 Inf     1.831      5.85
 
@@ -203,20 +203,104 @@ Intervals are back-transformed from the log scale
 $contrasts
 invasion = without:
  contrast           ratio    SE  df null z.ratio p.value
- control / warming  0.629 0.104 Inf    1  -2.814  0.0136
- control / heatwave 4.164 1.098 Inf    1   5.411  <.0001
+ upland / warming   0.629 0.104 Inf    1  -2.814  0.0136
+ upland / heatwave  4.164 1.098 Inf    1   5.411  <.0001
  warming / heatwave 6.619 1.707 Inf    1   7.330  <.0001
 
 invasion = introduction:
  contrast           ratio    SE  df null z.ratio p.value
- control / warming  0.785 0.132 Inf    1  -1.444  0.3183
- control / heatwave 1.087 0.203 Inf    1   0.450  0.8944
+ upland / warming   0.785 0.132 Inf    1  -1.444  0.3183
+ upland / heatwave  1.087 0.203 Inf    1   0.450  0.8944
  warming / heatwave 1.385 0.257 Inf    1   1.757  0.1844
 
 Results are averaged over the levels of: block 
 P value adjustment: tukey method for comparing a family of 3 estimates 
 Tests are performed on the log scale 
 
+[1] ""
+[1] "========= PAN =========="
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: poisson  ( log )
+Formula: PAN.M ~ temp + block + (1 | cageID) + (1 | sID)
+   Data: .
+
+     AIC      BIC   logLik deviance df.resid 
+   699.5    714.5   -343.7    687.5       84 
+
+Scaled residuals: 
+   Min     1Q Median     3Q    Max 
+-4.557 -1.260 -0.511  1.166  6.208 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ cageID (Intercept) 0.1023   0.3199  
+ sID    (Intercept) 0.4123   0.6421  
+Number of obs: 90, groups:  cageID, 15; sID, 6
+
+Fixed effects:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   0.66614    0.33513   1.988   0.0468 *  
+tempwarming  -0.09349    0.27424  -0.341   0.7332    
+tempheatwave  2.11814    0.24380   8.688   <2e-16 ***
+blockB2      -0.43927    0.20987  -2.093   0.0363 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) tmpwrm tmphtw
+tempwarming -0.397              
+tempheatwav -0.447  0.549       
+blockB2     -0.231 -0.006 -0.016
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: poisson  ( log )
+Formula: PAN.M ~ temp + block + scale(PAL.M) + scale(Asobara) + scale(Diapriid) +      (1 | cageID) + (1 | sID)
+   Data: .
+
+     AIC      BIC   logLik deviance df.resid 
+   640.3    662.8   -311.2    622.3       81 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.8571 -1.2329 -0.2509  1.0966  5.1907 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ cageID (Intercept) 0.1203   0.3469  
+ sID    (Intercept) 0.3329   0.5769  
+Number of obs: 90, groups:  cageID, 15; sID, 6
+
+Fixed effects:
+                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      0.67046    0.32179   2.084   0.0372 *  
+tempwarming     -0.31336    0.29023  -1.080   0.2803    
+tempheatwave     1.93435    0.27289   7.088 1.36e-12 ***
+blockB2         -0.09221    0.22931  -0.402   0.6876    
+scale(PAL.M)    -0.33326    0.06465  -5.155 2.54e-07 ***
+scale(Asobara)  -0.07169    0.09305  -0.770   0.4410    
+scale(Diapriid)  0.06148    0.03953   1.555   0.1199    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) tmpwrm tmphtw blckB2 s(PAL. scl(A)
+tempwarming -0.425                                   
+tempheatwav -0.472  0.511                            
+blockB2     -0.241 -0.023 -0.085                     
+scal(PAL.M) -0.032  0.079  0.270 -0.238              
+scale(Asbr) -0.058 -0.024  0.314 -0.175  0.666       
+scale(Dprd) -0.041  0.028  0.202 -0.120  0.578  0.554
+          coef       pValue pAdjust
+1   0.66613583 4.684385e-02  0.5153
+2  -0.09349362 7.331636e-01  1.0000
+3   2.11813553 3.690314e-18  0.0000
+4  -0.43926514 3.634249e-02  0.3998
+5   0.67045796 3.720123e-02  0.4092
+6  -0.31335944 2.802841e-01  1.0000
+7   1.93434602 1.355818e-12  0.0000
+8  -0.09221139 6.875923e-01  1.0000
+9  -0.33325524 2.542533e-07  0.0000
+10 -0.07169220 4.410318e-01  1.0000
+11  0.06148328 1.198609e-01  1.0000
 [1] ""
 [1] "========= PAL =========="
 Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
@@ -299,6 +383,23 @@ scale(Dprd)  0.019 -0.123  0.049 -0.018 -0.040
 blockB2     -0.198 -0.004  0.011  0.013  0.062  0.015              
 tmpwrmng:nv  0.150 -0.745 -0.333 -0.648  0.089  0.035  0.000       
 tmphtwv:nvs  0.144 -0.322 -0.718 -0.655  0.118 -0.067  0.003  0.467
+          coef        pValue pAdjust
+1   3.68838197  0.000000e+00  0.0000
+2  -0.46533009  4.372719e-14  0.0000
+3  -0.19536505  7.601363e-04  0.0122
+4   0.35319045  6.163128e-10  0.0000
+5   0.35842681  5.055959e-08  0.0000
+6   0.17938637  3.488972e-02  0.5582
+7   0.09248992  2.581985e-01  1.0000
+8   3.75230957  0.000000e+00  0.0000
+9  -0.17406087  3.509221e-03  0.0561
+10 -0.19043354  4.866491e-04  0.0078
+11  0.07906852  1.389128e-01  1.0000
+12 -0.45431901 1.135674e-147  0.0000
+13 -0.05141981  2.144603e-05  0.0003
+14  0.28233536  1.206525e-12  0.0000
+15  0.01044286  8.952485e-01  1.0000
+16 -0.08612199  2.554208e-01  1.0000
 [1] ""
 [1] "========= PST =========="
 Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
@@ -340,7 +441,7 @@ blockB2     -0.302  0.001 -0.005  0.002
 tmpwrmng:nv  0.166 -0.666 -0.229 -0.642 -0.005       
 tmphtwv:nvs  0.114 -0.221 -0.647 -0.468  0.003  0.300
 $emmeans
-temp = control:
+temp = upland:
  invasion      rate    SE  df asymp.LCL asymp.UCL
  without      12.56 1.861 Inf     9.392     16.79
  introduction  9.67 1.592 Inf     7.005     13.35
@@ -360,7 +461,7 @@ Confidence level used: 0.95
 Intervals are back-transformed from the log scale 
 
 $contrasts
-temp = control:
+temp = upland:
  contrast               ratio    SE  df null z.ratio p.value
  without / introduction  1.30 0.155 Inf    1   2.187  0.0288
 
@@ -377,81 +478,96 @@ Tests are performed on the log scale
 
 Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
  Family: poisson  ( log )
-Formula: PST.M ~ temp * invasion + scale(PAL.M) + scale(Asobara) + scale(Diapriid) +      block + (1 | cageID) + (1 | sID)
+Formula: PST.M ~ temp * invasion + scale(PAL.M) + scale(Diapriid) + block +      (1 | cageID) + (1 | sID)
    Data: .
 
      AIC      BIC   logLik deviance df.resid 
-  1779.3   1822.4   -877.6   1755.3      258 
+  1832.8   1872.4   -905.4   1810.8      259 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.5816 -1.1486 -0.3176  0.8107  9.6175 
+-3.3586 -1.2010 -0.3279  0.8610 11.3616 
 
 Random effects:
  Groups Name        Variance Std.Dev.
- cageID (Intercept) 0.05289  0.230   
- sID    (Intercept) 0.04284  0.207   
+ cageID (Intercept) 0.06314  0.2513  
+ sID    (Intercept) 0.13731  0.3705  
 Number of obs: 270, groups:  cageID, 30; sID, 9
 
 Fixed effects:
                                   Estimate Std. Error z value Pr(>|z|)    
-(Intercept)                        2.37088    0.10332  22.948  < 2e-16 ***
-tempwarming                       -0.57020    0.11684  -4.880 1.06e-06 ***
-tempheatwave                      -1.96249    0.15993 -12.271  < 2e-16 ***
-invasionintroduction               0.02085    0.11198   0.186 0.852281    
-scale(PAL.M)                      -0.06104    0.03488  -1.750 0.080071 .  
-scale(Asobara)                     0.31755    0.04006   7.926 2.26e-15 ***
-scale(Diapriid)                    0.05919    0.02873   2.060 0.039368 *  
-blockB2                            0.16453    0.10122   1.626 0.104051    
-tempwarming:invasionintroduction  -0.68166    0.17807  -3.828 0.000129 ***
-tempheatwave:invasionintroduction -0.09823    0.25077  -0.392 0.695268    
+(Intercept)                        2.43260    0.14890  16.337  < 2e-16 ***
+tempwarming                       -0.48838    0.12249  -3.987 6.69e-05 ***
+tempheatwave                      -2.03060    0.16456 -12.340  < 2e-16 ***
+invasionintroduction              -0.11977    0.11919  -1.005  0.31496    
+scale(PAL.M)                      -0.16336    0.03256  -5.018 5.23e-07 ***
+scale(Diapriid)                    0.07982    0.02909   2.744  0.00606 ** 
+blockB2                            0.19526    0.10794   1.809  0.07046 .  
+tempwarming:invasionintroduction  -0.75009    0.18309  -4.097 4.19e-05 ***
+tempheatwave:invasionintroduction -0.25734    0.25367  -1.014  0.31037    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-            (Intr) tmpwrm tmphtw invsnn s(PAL. scl(A) scl(D) blckB2 tmpwr:
-tempwarming -0.276                                                        
-tempheatwav -0.205  0.298                                                 
-invsnntrdct -0.342  0.354  0.280                                          
-scal(PAL.M)  0.087  0.107  0.099 -0.136                                   
-scale(Asbr) -0.045 -0.157  0.005  0.084  0.404                            
-scale(Dprd) -0.037 -0.014  0.073  0.080 -0.011 -0.056                     
-blockB2     -0.399 -0.042 -0.041  0.047 -0.242 -0.049  0.022              
-tmpwrmng:nv  0.208 -0.634 -0.187 -0.601  0.042  0.089 -0.049 -0.012       
-tmphtwv:nvs  0.130 -0.192 -0.633 -0.418  0.034  0.106 -0.090  0.000  0.275
+            (Intr) tmpwrm tmphtw invsnn s(PAL. scl(D) blckB2 tmpwr:
+tempwarming -0.232                                                 
+tempheatwav -0.171  0.344                                          
+invsnntrdct -0.267  0.427  0.328                                   
+scal(PAL.M)  0.087  0.154  0.084 -0.198                            
+scale(Dprd) -0.011 -0.056  0.046  0.056  0.033                     
+blockB2     -0.298 -0.040 -0.031  0.048 -0.225  0.011              
+tmpwrmng:nv  0.173 -0.651 -0.224 -0.631  0.017 -0.029 -0.011       
+tmphtwv:nvs  0.114 -0.210 -0.646 -0.454 -0.002 -0.082  0.005  0.294
 $emmeans
-temp = control:
+temp = upland:
  invasion      rate    SE  df asymp.LCL asymp.UCL
- without      11.62 1.107 Inf      9.65     14.01
- introduction 11.87 1.416 Inf      9.40     15.00
+ without      12.56 1.789 Inf     9.497     16.60
+ introduction 11.14 1.783 Inf     8.139     15.25
 
 temp = warming:
  invasion      rate    SE  df asymp.LCL asymp.UCL
- without       6.57 0.820 Inf      5.15      8.39
- introduction  3.39 0.465 Inf      2.59      4.44
+ without       7.70 1.250 Inf     5.607     10.59
+ introduction  3.23 0.560 Inf     2.298      4.54
 
 temp = heatwave:
  invasion      rate    SE  df asymp.LCL asymp.UCL
- without       1.63 0.269 Inf      1.18      2.26
- introduction  1.51 0.294 Inf      1.03      2.21
+ without       1.65 0.323 Inf     1.122      2.42
+ introduction  1.13 0.249 Inf     0.735      1.74
 
 Results are averaged over the levels of: block 
 Confidence level used: 0.95 
 Intervals are back-transformed from the log scale 
 
 $contrasts
-temp = control:
+temp = upland:
  contrast               ratio    SE  df null z.ratio p.value
- without / introduction 0.979 0.110 Inf    1  -0.186  0.8523
+ without / introduction  1.13 0.134 Inf    1   1.005  0.3150
 
 temp = warming:
  contrast               ratio    SE  df null z.ratio p.value
- without / introduction 1.936 0.276 Inf    1   4.638  <.0001
+ without / introduction  2.39 0.339 Inf    1   6.125  <.0001
 
 temp = heatwave:
  contrast               ratio    SE  df null z.ratio p.value
- without / introduction 1.080 0.246 Inf    1   0.339  0.7342
+ without / introduction  1.46 0.330 Inf    1   1.668  0.0953
 
 Results are averaged over the levels of: block 
 Tests are performed on the log scale 
 
+          coef       pValue pAdjust
+1   2.49573699 2.748393e-58  0.0000
+2  -0.37017790 2.689028e-03  0.0430
+3  -1.98105304 4.627545e-33  0.0000
+4  -0.26103838 2.876464e-02  0.4602
+5   0.06912052 5.500447e-01  1.0000
+6  -0.72430375 9.390244e-05  0.0015
+7  -0.22790847 3.720103e-01  1.0000
+8   2.43260279 5.400277e-60  0.0000
+9  -0.48838093 6.689311e-05  0.0011
+10 -2.03059807 5.527408e-35  0.0000
+11 -0.11977423 3.149554e-01  1.0000
+12 -0.16336483 5.228413e-07  0.0000
+13  0.07981795 6.064800e-03  0.0970
+14  0.19526328 7.046332e-02  1.0000
+15 -0.75008819 4.188546e-05  0.0007
+16 -0.25733803 3.103702e-01  1.0000
